@@ -150,3 +150,19 @@ function uimods_civicrm_navigationMenu(&$menu) {
   ));
   _uimods_civix_navigationMenu($menu);
 } // */
+
+/**
+ * Implements hook_civicrm_buildForm()
+ * @param $formName
+ * @param $form
+ */
+function uimods_civicrm_buildForm($formName, &$form) {
+  switch ($formName) {
+    case 'CRM_Event_Form_Participant':
+      require_once 'CRM/Uimods/ParticipantForm.php';
+      CRM_Uimods_ParticipantForm::buildFormHook($formName, $form);
+      break;
+    default:
+      break;
+  }
+}
