@@ -152,15 +152,20 @@ function uimods_civicrm_navigationMenu(&$menu) {
 } // */
 
 /**
- * Implements hook_civicrm_buildForm()
- * @param $formName
- * @param $form
+ * Implements hook_civicrm_buildForm().
+ *
+ * @param string $formName
+ * @param \HTML_QuickForm $form
  */
 function uimods_civicrm_buildForm($formName, &$form) {
   switch ($formName) {
     case 'CRM_Event_Form_Participant':
       require_once 'CRM/Uimods/ParticipantForm.php';
       CRM_Uimods_ParticipantForm::buildFormHook($formName, $form);
+      break;
+    case 'CRM_Export_Form_Select':
+      $defaults['postal_mailing_export[postal_mailing_export]'] = 1;
+      $form->setDefaults($defaults);
       break;
     default:
       break;
