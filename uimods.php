@@ -171,3 +171,14 @@ function uimods_civicrm_buildForm($formName, &$form) {
       break;
   }
 }
+
+/**
+ * Implements hook_civicrm_pageRun().
+ *
+ * @param $page
+ */
+function uimods_civicrm_pageRun(&$page) {
+  if (get_class($page) === 'CRM_Contact_Page_View_Summary') {
+    CRM_Core_Resources::singleton()->addScriptFile('de.patriotischegesellschaft.uimods', 'js/contact-summary.js');
+  }
+}
