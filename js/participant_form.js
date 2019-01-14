@@ -20,7 +20,7 @@
       $("#notify").remove();
     });
 
-    // Disable the "send receipt" checkbox when selecting "Cancelled" as
+    // Disable the "send receipt" checkbox when selecting "Abgesagt" as
     // participant status.
     //
     // This is ugly, but we can't use $().on('change') here because the SELECT
@@ -29,8 +29,10 @@
     // existing code and use the same approach as sendNotification(): Defining a
     // global function and calling it from the onchange property, but without a
     // "return".
-    var onchangeAttr = document.getElementById('status_id').onchange;
-    document.getElementById('status_id').onchange = function() {
+    var $form = $('form.CRM_Event_Form_Participant');
+    var $select = $form.find('#status_id');
+    var onchangeAttr = $select.get(0).onchange;
+    $select.get(0).onchange = function() {
       sendReceipt();
       if (typeof onchangeAttr === 'function') {
         onchangeAttr();
