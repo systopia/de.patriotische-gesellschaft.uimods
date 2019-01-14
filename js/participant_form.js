@@ -46,7 +46,7 @@
  * SELECT element, similar to sendNotification().
  */
 function sendReceipt() {
-  var receiptStatusIds = "4";
+  var receiptStatusIds = "17";
   receiptStatusIds = receiptStatusIds.split(',');
   if (cj.inArray(cj('select#status_id option:selected').val(), receiptStatusIds) > -1) {
     cj("#send_receipt").prop('checked', false);
