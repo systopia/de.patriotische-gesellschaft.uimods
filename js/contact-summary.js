@@ -18,5 +18,12 @@
     $('.customFieldGroup.zusatzinformationen_arbeitgeber')
       .insertAfter('.crm-summary-contactinfo-block')
       .css('margin-bottom', '20px');
+
+    $('.customFieldGroup.DW_Netzwerk')
+      .appendTo('#customFields .contactCardLeft');
+    $('.customFieldGroup.DW_Schule')
+      .appendTo('#customFields .contactCardLeft');
+    $('.customFieldGroup.Diesterweg_Stipendium')
+      .appendTo('#customFields .contactCardLeft');
   });
 })(jQuery);
