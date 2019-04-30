@@ -18,7 +18,7 @@
  * Changes german translation 'abbrechen' to 'stornieren (en: cancel)
  * See #7508
  */
-class CRM_Uimods_ParticipantForm {
+class CRM_Uimods_SelfSvcUpdateForm {
 
   public static function buildFormHook($formName, &$form) {
 

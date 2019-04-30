@@ -168,7 +168,8 @@ function uimods_civicrm_buildForm($formName, &$form) {
       $form->setDefaults($defaults);
       break;
     case 'CRM_Event_Form_SelfSvcUpdate':
-      require_once '';
+      require_once 'CRM/Uimods/SelfSvcUpdateForm.php';
+      CRM_Uimods_SelfSvcUpdateForm::buildFormHook($formName, $form);
       break;
     default:
       break;
