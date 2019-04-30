@@ -167,6 +167,10 @@ function uimods_civicrm_buildForm($formName, &$form) {
       $defaults['postal_mailing_export[postal_mailing_export]'] = 1;
       $form->setDefaults($defaults);
       break;
+    case 'CRM_Event_Form_SelfSvcUpdate':
+      require_once 'CRM/Uimods/SelfSvcUpdateForm.php';
+      CRM_Uimods_SelfSvcUpdateForm::buildFormHook($formName, $form);
+      break;
     default:
       break;
   }
