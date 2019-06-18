@@ -15,5 +15,11 @@
 
 cj('#action option[value="2"]').text('Stornieren');
 
+// remove 'übertragen' from dropdown (#7508)
+cj('#action option[value="1"]').remove();
+// auto select stornieren
+cj('#action option[value="2"]').prop('selected', true);
 
-
+// remove übertragen from text description field
+// TODO: This is quick and dirty - should probably be resolved by a translation update or something.
+cj('.label').html(cj('.label').html().replace('Anmeldung stornieren oder übertragen', 'Anmeldung stornieren'));
